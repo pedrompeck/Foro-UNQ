@@ -1,0 +1,10 @@
+Lunes 28/10
+CIERE DE SPRINT
+
+(recordar -> criterios de aceptacion)
+
+- las user Stories: como el usuario quiere cierto beneficio
+    ej: (como usuario) quiero registrarme
+    llevan los criterios de aceptacion (Test que deben pasar con ejemplos concretos)
+
+- Una vez ya con un puñado de tareas en el backlog, agregamos los storie point y luego se elige el pivot

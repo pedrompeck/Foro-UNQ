@@ -2,4 +2,7 @@
 .settings
 .project
 /target
-.idea/ 
+.idea/
+out/
+*.xml
+**.log*
