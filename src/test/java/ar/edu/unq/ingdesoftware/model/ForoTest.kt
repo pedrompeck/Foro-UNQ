@@ -1,4 +1,4 @@
-package ar.edu.unq.ingdesoftware
+package ar.edu.unq.ingdesoftware.model
 import ar.edu.unq.ingdesoftware.model.Foro
 import ar.edu.unq.ingdesoftware.model.User
 import ar.edu.unq.ingdesoftware.model.exceptions.UserExistException
