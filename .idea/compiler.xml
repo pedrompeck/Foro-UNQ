@@ -10,5 +10,8 @@
         <module name="Foro-UNQ" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Foro-UNQ" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>
