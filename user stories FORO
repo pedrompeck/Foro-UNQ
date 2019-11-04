@@ -1,0 +1,148 @@
+USERS STORIES
+
+-Como: Usuario con una cuenta en el foro
+-Quiero: iniciar sesion
+-Con el objetivo de: ingresar al sitio web
+CRITERIOS DE ACEPTACION:
+	-Dado: un usuario que completo los campos de usuario y contraseña
+	-Cuando: hace click para ingresar al Foro
+	-Entonces: la ventana se redirije a la pagina principal del Foro
+
+
+-Como: Usuario sin registrarse
+-Quiero: crear una cuenta personal
+-Con el objetivo de: tener un perfil en el Foro accediendo a su contenido
+CRITERIOS DE ACEPTACION:
+	-Dado: una opcion para crear una cuenta
+	-Cuando: un usuario pulsa sobre esa opcion
+	-Entonces: la ventana se redirige a un formulario para completar con datos personales y de la cuenta
+ 
+	-Dado: un formulario de datos personales y de la nueva cuenta completado
+	-Cuando: un usuario selecciona la opcion de "Finalizar registro"
+	-Entonces: la ventana se redirige a la pagina de inicio de sesion
+
+	-Dado: un nombre de usuario en el sistema
+	-Cuando: un usuario quiere crearse una cuenta con ese mismo nombre
+	-Entonces: se muestra en la pantalla que el nombre de usuario escogido no esta disponible para usar.
+
+
+-Como: Usuario logueado
+-Quiero: hacer una publicacion
+-Con el objetivo de: crear un tema de conversacion
+CRITERIOS DE ACEPTACION:
+	-Dado: un cuadro de texto con la etiqueta "Crea una publicacion"
+	-Cuando: un usuario ingresa texto y pulsa sobre la opcion "Publicar"
+	-Entonces: se actualiza la pagina con el cuadro de texto vacio y la publicacion publicada
+
+	-Dada: una publicacion en un perfil
+	-Cuando: un usuario utiliza la opcion "Añadir etiquetas"
+	-Entonces: la publicacion queda configurada con esas etiquetas para ser encontrada
+
+
+-Como: Usuario logueado
+-Quiero: buscar un tema de conversacion
+-Con el objetivo de: encontrar publicaciones e informacion sobre un tema
+CRITERIOS DE ACEPTACION:
+	-Dada(s): una(s) palabra(s) en el cuadro de busqueda 
+	-Cuando: el usuario acepta
+	-Entonces: se actualiza la pagina con los resultados del texto introducido
+
+
+-Como: Usuario logueado
+-Quiero: agregar un comentario
+-Con el objetivo de: participar en una publicacion
+CRITERIOS DE ACEPTACION:
+	-Dado: un cuadro de texto en la zona de comentarios de una publicacion seleccionada
+	-Cuando: el usuario ingresa texto en ese espacio y lo confirma 
+	-Entonces: la pagina se actualiza mostrando ese comentario con su autor
+
+
+-Como: Usuario logueado
+-Quiero: poder editar mi comentario
+-Con el objetivo de: corregir errores en el mismo
+CRITERIOS DE ACEPTACION:
+	-Dado: un comentario en una publicacion
+	-Cuando: el usuario utiliza la opcion de "editar comentario"
+	-Entonces: el cuadro de texto se actualiza para poder modificar el texto del comentario
+
+
+-Como: Usuario logueado
+-Quiero: poder eliminar mi comentario
+-Con el objetivo de: que no aparezca mas en una publicacion
+CRITERIOS DE ACEPTACION:
+	-Dado: un comentario en una publicacion
+	-Cuando: el usuario utiliza la opcion "eliminar comentario"
+	-Entonces: se dispara una ventana de confirmacion
+
+	-Dada: una ventana de confirmacion para eliminar comentario
+	-Cuando: el usuario acepta esa confirmacion
+	-Entonces: se actualiza la publicacion de ese comentario sin el mismo
+
+	-Dado: una ventana de confirmacion para elimimar comentario
+	-Cuando: el usuario rechaza esa confirmacion
+	-Entonces: la ventana de confirmacion desaparece
+
+
+-Como: Usuario logueado
+-Quiero: cerrar la sesion
+-Con el objetivo de: que mi perfil no quede en linea ni accesible para otra persona que tome mi dispositivo
+CRITERIOS DE ACEPTACION:
+	-Dado: un usuario el cual ya termino de utilizar el foro
+	-Cuando: preciona la opcion de "cerrar sesion"
+	-Entonces: se muestra una ventana de confirmacion
+
+	-Dada: una ventana de confirmacion para que un usuario cierre sesion 
+	-Cuando: el usuario acepta la confirmacion
+	-Entonces: se redirige a la ventana para que inicie sesion
+
+	-Dada: una ventana de confirmacion para que el usuario cierre sesion
+	-Cuando: el usuario rechaza la confirmacion
+	-Entonces: la ventana de confirmacion desaparece 
+
+
+-Como: Usuario logueado
+-Quiero: tener un acceso rapido y visualizar las publicaciones activas en las que participe
+-Con el objetivo de: poder seguir participando en las mismas 
+CRITERIOS DE ACEPTACION:
+	-Dado: 
+	-Cuando:
+	-Entonces:
+
+
+-Como: Usuario con perfil en el foro
+-Quiero: poder recuperar mi contraseña olvidada
+-Con el objetivo de: poder iniciar sesion nuevamente 
+CRITERIOS DE ACEPTACION:
+	-Dado:
+	-Cuando:
+	-Entonces:
+
+
+-Como: Usuario logueado
+-Quiero: marcar una publicacion como "Favorita"
+-Con el objetivo de: guardar las publicaciones que me interesaron 
+CRITERIOS DE ACEPTACION:
+	-Dado:
+	-Cuando:
+	-Entonces:
+
+
+-Como: Usuario logueado 
+-Quiero: entrar a la seccion de "Favoritos"
+-Con el objetivo de: ver las publicaciones guardadas como "Favoritas"
+CRITERIOS DE ACEPTACION:
+	-Dado:
+	-Cuando:
+	-Entonces:
+
+
+-Como: Usuario logueado
+-Quiero: editar la seccion de "Favoritos"
+-Con el objetivo de: quitar publicaciones de esa seccion.
+CRITERIOS DE ACEPTACION:
+	-Dado:
+	-Cuando:
+	-Entonces:
+
+
+ 
