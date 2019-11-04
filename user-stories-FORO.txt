@@ -1,5 +1,6 @@
 USERS STORIES
 
+LOG IN
 -Como: Usuario con una cuenta en el foro
 -Quiero: iniciar sesion
 -Con el objetivo de: ingresar al sitio web
@@ -25,7 +26,7 @@ CRITERIOS DE ACEPTACION:
 	-Cuando: un usuario quiere crearse una cuenta con ese mismo nombre
 	-Entonces: se muestra en la pantalla que el nombre de usuario escogido no esta disponible para usar.
 
-
+AGREGAR PUBLICACION
 -Como: Usuario logueado
 -Quiero: hacer una publicacion
 -Con el objetivo de: crear un tema de conversacion
@@ -38,7 +39,7 @@ CRITERIOS DE ACEPTACION:
 	-Cuando: un usuario utiliza la opcion "Añadir etiquetas"
 	-Entonces: la publicacion queda configurada con esas etiquetas para ser encontrada
 
-
+BUSCAR PUBLICACION
 -Como: Usuario logueado
 -Quiero: buscar un tema de conversacion
 -Con el objetivo de: encontrar publicaciones e informacion sobre un tema
@@ -47,7 +48,7 @@ CRITERIOS DE ACEPTACION:
 	-Cuando: el usuario acepta
 	-Entonces: se actualiza la pagina con los resultados del texto introducido
 
-
+AGREGAR COMENTARIO
 -Como: Usuario logueado
 -Quiero: agregar un comentario
 -Con el objetivo de: participar en una publicacion
@@ -56,7 +57,7 @@ CRITERIOS DE ACEPTACION:
 	-Cuando: el usuario ingresa texto en ese espacio y lo confirma 
 	-Entonces: la pagina se actualiza mostrando ese comentario con su autor
 
-
+EDITAR COMENTARIO
 -Como: Usuario logueado
 -Quiero: poder editar mi comentario
 -Con el objetivo de: corregir errores en el mismo
@@ -65,7 +66,7 @@ CRITERIOS DE ACEPTACION:
 	-Cuando: el usuario utiliza la opcion de "editar comentario"
 	-Entonces: el cuadro de texto se actualiza para poder modificar el texto del comentario
 
-
+ELIMINAR COMENTARIO
 -Como: Usuario logueado
 -Quiero: poder eliminar mi comentario
 -Con el objetivo de: que no aparezca mas en una publicacion
@@ -82,7 +83,7 @@ CRITERIOS DE ACEPTACION:
 	-Cuando: el usuario rechaza esa confirmacion
 	-Entonces: la ventana de confirmacion desaparece
 
-
+LOG OUT
 -Como: Usuario logueado
 -Quiero: cerrar la sesion
 -Con el objetivo de: que mi perfil no quede en linea ni accesible para otra persona que tome mi dispositivo
