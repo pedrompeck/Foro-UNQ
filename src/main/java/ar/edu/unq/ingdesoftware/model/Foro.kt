@@ -5,10 +5,15 @@ import ar.edu.unq.ingdesoftware.model.exceptions.UserExistException
 class Foro {
 
     var users: MutableList<User> = mutableListOf()
+    var materias: MutableList<Materia> = mutableListOf()
 
     fun addUser(user: User) {
         this.checkUser(user.username)
         this.users.add(user)
+    }
+
+    fun addMateria(materia: Materia) {
+        this.materias.add(materia)
     }
 
     private fun checkUser(username: String) {
