@@ -1,5 +1,6 @@
 package ar.edu.unq.ingdesoftware.model
 
+import ar.edu.unq.ingdesoftware.model.exceptions.MateriaNotFound
 import ar.edu.unq.ingdesoftware.model.exceptions.UserExistException
 
 class Foro {
@@ -21,6 +22,11 @@ class Foro {
         if(user != null) {
             throw UserExistException("El usuario con el nombre $username ya existe")
         }
+    }
+
+    fun getMateriaById(idMateria: Int): Materia {
+        return this.materias.find { materia -> materia.id == idMateria } ?:
+                throw MateriaNotFound("No se encontro la materia con id $idMateria")
     }
 
 }

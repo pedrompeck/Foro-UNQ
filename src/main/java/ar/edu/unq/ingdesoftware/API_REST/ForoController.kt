@@ -1,6 +1,8 @@
 package ar.edu.unq.ingdesoftware.API_REST
 
 import ar.edu.unq.ingdesoftware.model.Foro
+import ar.edu.unq.ingdesoftware.model.Materia
+import ar.edu.unq.ingdesoftware.model.exceptions.MateriaNotFound
 import io.javalin.Context
 import io.javalin.NotFoundResponse
 import org.eclipse.jetty.http.HttpStatus
@@ -17,4 +19,15 @@ class ForoController(unForo: Foro) {
         ctx.json(materiasREST)
     }
 
+    fun getMateriaById(ctx: Context) {
+        val idMateria = ctx.pathParam("id").toInt()
+        try {
+            val materia: Materia = foro.getMateriaById(idMateria)
+            val materiaREST: MateriaREST = conversor.materiaToREST(materia)
+            ctx.json(materiaREST)
+        }
+        catch(e : MateriaNotFound) {
+            throw NotFoundResponse("La materia con el id $idMateria no se encontro")
+        }
+    }
 }

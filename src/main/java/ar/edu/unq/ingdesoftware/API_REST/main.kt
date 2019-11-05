@@ -36,7 +36,10 @@ fun main() {
     app.routes {
         path("materias") {
             get(foroController::getAllMaterias)
+            path(":id") {
+                get(foroController::getMateriaById)
+            }
         }
-    }
 
+    }
 }
