@@ -2,6 +2,7 @@ package ar.edu.unq.ingdesoftware.model
 
 import ar.edu.unq.ingdesoftware.model.exceptions.MateriaNotFound
 import ar.edu.unq.ingdesoftware.model.exceptions.UserExistException
+import java.util.stream.Collectors
 
 class Foro {
 
@@ -28,5 +29,16 @@ class Foro {
         return this.materias.find { materia -> materia.id == idMateria } ?:
                 throw MateriaNotFound("No se encontro la materia con id $idMateria")
     }
+
+    fun getAllPublicacionesByName(name: String): List<Publicacion> {
+        return this.getAllPublicaciones().filter{ publicacion -> publicacion.name == name }
+    }
+
+    fun getAllPublicaciones(): List<Publicacion> {
+        return this.materias
+                .map { materia -> materia.publicaciones }
+                .flatMap{ publicaciones -> publicaciones }
+    }
+
 
 }

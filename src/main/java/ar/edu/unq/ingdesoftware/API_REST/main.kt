@@ -2,6 +2,7 @@ package ar.edu.unq.ingdesoftware.API_REST
 
 import ar.edu.unq.ingdesoftware.model.Foro
 import ar.edu.unq.ingdesoftware.model.Materia
+import ar.edu.unq.ingdesoftware.model.Publicacion
 import ar.edu.unq.ingdesoftware.model.User
 import com.fasterxml.jackson.databind.exc.MismatchedInputException
 import io.javalin.Javalin
@@ -28,8 +29,14 @@ fun main() {
     /** SETUP **/
 
     var foro = Foro()
-    foro.addMateria(Materia(1, "Interfaces", "Es una materia de la UNQ para hacer diseño web"))
-    foro.addMateria(Materia(2, "Persistencia", "Es una materia de la UNQ para persistir objectos"))
+    val interfaces = Materia(1, "Interfaces", "Es una materia de la UNQ para hacer diseño web")
+    val persistencia = Materia(2, "Persistencia", "Es una materia de la UNQ para persistir objectos")
+
+    interfaces.addPublicacion(Publicacion("reactjs", "una herramienta para hacer el front end"))
+    persistencia.addPublicacion(Publicacion("hibernate", "una herramienta para persistir objetos en la base de datos"))
+
+    foro.addMateria(interfaces)
+    foro.addMateria(persistencia)
 
     val foroController = ForoController(foro)
 
@@ -41,5 +48,8 @@ fun main() {
             }
         }
 
+        path("search") {
+            get(foroController::getAllPublicacionesByName)
+        }
     }
 }

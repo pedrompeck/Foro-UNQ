@@ -2,6 +2,7 @@ package ar.edu.unq.ingdesoftware.API_REST
 
 import ar.edu.unq.ingdesoftware.model.Foro
 import ar.edu.unq.ingdesoftware.model.Materia
+import ar.edu.unq.ingdesoftware.model.Publicacion
 import ar.edu.unq.ingdesoftware.model.exceptions.MateriaNotFound
 import io.javalin.Context
 import io.javalin.NotFoundResponse
@@ -30,4 +31,13 @@ class ForoController(unForo: Foro) {
             throw NotFoundResponse("La materia con el id $idMateria no se encontro")
         }
     }
+
+    fun getAllPublicacionesByName(ctx: Context) {
+        val name: String = ctx.queryParam("q")!!
+        val publicaciones: List<Publicacion> = foro.getAllPublicacionesByName(name.toLowerCase())
+        //val publicacionesREST: RestaurantesYMenusREST = conversor.restaurantesYMenusToREST(restaurantesYMenus)
+    //   restaurantesYMenusREST.nombre = nombre
+        ctx.json(publicaciones)
+    }
+
 }

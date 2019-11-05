@@ -1,6 +1,6 @@
 package ar.edu.unq.ingdesoftware.model
 
-class Publicacion {
+class Publicacion(val name: String, val descripcion: String) {
 
     var comentarios: MutableList<String> = mutableListOf()
 
