@@ -35,8 +35,6 @@ class ForoController(unForo: Foro) {
     fun getAllPublicacionesByName(ctx: Context) {
         val name: String = ctx.queryParam("q")!!
         val publicaciones: List<Publicacion> = foro.getAllPublicacionesByName(name.toLowerCase())
-        //val publicacionesREST: RestaurantesYMenusREST = conversor.restaurantesYMenusToREST(restaurantesYMenus)
-    //   restaurantesYMenusREST.nombre = nombre
         ctx.json(publicaciones)
     }
 

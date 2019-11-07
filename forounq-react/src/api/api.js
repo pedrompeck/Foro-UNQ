@@ -7,3 +7,5 @@ const request = (type, path, body) => axios
   .then(req => req.data);
 
 export const materias = body => request('get', '/materias', body);
+export const publicaciones = data => request('get', `/search?q=${data}`)
+

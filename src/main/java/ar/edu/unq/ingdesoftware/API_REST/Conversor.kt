@@ -5,7 +5,7 @@ import ar.edu.unq.ingdesoftware.model.Materia
 class Conversor {
 
     fun materiaToREST(materia: Materia): MateriaREST {
-        return MateriaREST(materia.id, materia.name, materia.descripcion)
+        return MateriaREST(materia.id, materia.name, materia.descripcion, materia.nombresDePublicaciones())
     }
 
     fun materiasToREST(materias: List<Materia>): List<MateriaREST> {

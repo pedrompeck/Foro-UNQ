@@ -28,11 +28,11 @@ class Home extends React.Component {
     render() {
         return(
             <div className="container">
-              <NavBar />  
+              <NavBar allProps={this.props}/>  
               <Materias />     
             </div>
         );
     }
 }
 
-export default Home     ;
+export default Home;

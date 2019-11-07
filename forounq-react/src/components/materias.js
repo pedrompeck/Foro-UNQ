@@ -31,6 +31,13 @@ class Materias extends React.Component {
                             <div>
                               <p>Materia: {materia.name}</p>
                               <p>Descripcion: {materia.descripcion}</p>
+                              <p>Publicaciones: 
+                                  <ul>
+                                      {materia.nombresDePublicaciones.map(nombre => 
+                                        <li>{nombre}</li>
+                                    )}
+                                  </ul>
+                              </p>
                              </div> 
                             )}
                     </div>

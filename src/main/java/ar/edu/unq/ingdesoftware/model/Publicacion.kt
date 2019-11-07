@@ -1,10 +1,10 @@
 package ar.edu.unq.ingdesoftware.model
 
-class Publicacion(val name: String, val descripcion: String) {
+class Publicacion(val id: Int, val name: String, val descripcion: String) {
 
-    var comentarios: MutableList<String> = mutableListOf()
+    var comentarios: MutableList<Comentario> = mutableListOf()
 
-    fun addComentario(comentario: String) {
+    fun addComentario(comentario: Comentario) {
         this.comentarios.add(comentario)
     }
 

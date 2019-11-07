@@ -8,4 +8,8 @@ class Materia(val id: Int, val name: String, val descripcion: String) {
         this.publicaciones.add(publicacion)
     }
 
+    fun nombresDePublicaciones(): List<String> {
+        return this.publicaciones.map{ publicacion -> publicacion.name }
+    }
+
 }
