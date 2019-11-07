@@ -6,14 +6,15 @@ class Search extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-           publicacionesBuscadas: this.props.location.state
+           publicacionesBuscadas: this.props.location.state.response,
+           value: this.props.location.state.nombre
         }
      }
 
     componentWillReceiveProps() {
-        const ubicacion = this.props.location.state
         this.setState({
-            publicacionesBuscadas: ubicacion
+            value: this.props.location.state.nombre,
+            publicacionesBuscadas: this.props.location.state.response
         })
     }
 
@@ -23,6 +24,11 @@ class Search extends React.Component {
             <div className="container">
                <NavBar allProps={this.props}/>
                <div className="container">
+                    {this.state.publicacionesBuscadas.length == 0 &&
+                            <div className="">
+                                <h1 className="text-center m-5">No se han encontrado resultados para tu búsqueda ("{this.state.value}")</h1>
+                            </div>
+                    }
                     {this.state.publicacionesBuscadas.map(publicacion => 
                     <div>
                         <p>Nombre: {publicacion.name} </p>

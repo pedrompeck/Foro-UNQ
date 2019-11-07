@@ -36,7 +36,10 @@ class NavBar extends React.Component {
         .then(response =>  this.props.allProps.history.push( {
                                                             pathname:'/search/',
                                                             search: '?q=' + this.state.valor, 
-                                                            state: response 
+                                                            state: { 
+                                                              response,
+                                                              nombre: this.state.valor
+                                                            } 
         }))
         .catch(error => console.log(error))
     }
