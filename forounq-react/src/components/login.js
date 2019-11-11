@@ -27,7 +27,7 @@ class Login extends React.Component {
     render() {
         return(
             <div className="container">
-                        <h1> FORO </h1>
+                        <h1> FORO - UNQ </h1>
                             <div>
                               <p>Login</p>
                               <p>Olvide contraseña</p>

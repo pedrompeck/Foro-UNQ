@@ -1,5 +1,6 @@
 import React from 'react';
 import { materias } from '../api/api';
+import { Link } from 'react-router-dom';
 
 class Materias extends React.Component {
 
@@ -28,18 +29,9 @@ class Materias extends React.Component {
             <div className="container">
                         <h1> Materias </h1>
                             {this.state.materias.map(materia => 
-                            <div>
-                              <p>Materia: {materia.name}</p>
-                              <p>Descripcion: {materia.descripcion}</p>
-                              <p>Publicaciones: 
-                                  <ul>
-                                      {materia.nombresDePublicaciones.map(nombre => 
-                                        <li>{nombre}</li>
-                                    )}
-                                  </ul>
-                              </p>
-                             </div> 
+                             <p> Materia:  <Link to={`/materia`}> {materia.name}  </Link> </p>
                             )}
+                        <h1> Mis Favoritos </h1>    
                     </div>
         );
     }
