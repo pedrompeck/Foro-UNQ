@@ -1,5 +1,6 @@
 import React from 'react';
 import { materias } from '../api/api';
+import {Link} from 'react-router-dom';
 
 class Login extends React.Component {
 
@@ -9,6 +10,7 @@ class Login extends React.Component {
            userName: '',
            password: '',
         }
+        this.goToHome = this.goToHome.bind(this)
     }
 
     componentDidMount() {
@@ -23,16 +25,27 @@ class Login extends React.Component {
             console.log(error);
         })
     }
-   
+ 
+    goToHome() {
+        this.props.history.push('/home')
+    }
+
     render() {
         return(
-            <div className="container">
-                        <h1> FORO </h1>
+            <div className="container centerRow">
+                <div className="row">
+                    <div className="col-4 offset-4">
+                        <div className="container text-center">
+                        <h1> FORO UNQ</h1>
                             <div>
                               <p>Login</p>
-                              <p>Olvide contraseña</p>
+                              <button type="button" className="btn btn-primary btn-block text-center" onClick={this.goToHome}> Ingresar</button>
+                              <Link to="/register"><p>Olvidé contraseña</p></Link>
                              </div>
+                        </div>
                     </div>
+                </div>
+            </div>
         );
     }
 }
