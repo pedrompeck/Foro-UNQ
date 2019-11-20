@@ -31,7 +31,7 @@ class Materias extends React.Component {
                 <h1> Materias </h1>
                     {this.state.materias.map(
                         function(materia, i){
-                            <p> Materia:  <Link to={ `/materia/${materia.id}`}> {materia.name}  </Link> </p>
+                            return  <p> Materia:  <Link to={{ pathname: `/materias/${materia.id}`, state: { idMateria: materia.id}}}> {materia.name}  </Link> </p>
                         }
                         /*
                         materia => 

@@ -59,10 +59,5 @@ fun main() {
         path("search") {
             get(foroController::getAllPublicacionesByName)
         }
-
-        path("materia") {
-            get(foroController::getMateriaById)
-        }
-
     }
 }

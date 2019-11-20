@@ -13,7 +13,7 @@ class AppRouter extends React.Component {
           <BrowserRouter>
                 <Route exact path="/home" component={Home} />
                 <Route exact path="/search" component={Search} />
-                <Route exact path="/materia" component={Materia} />
+                <Route exact path="/materias/:id" component={Materia} />
                 <Route exact path="/" component={Login} />      
 
                 
