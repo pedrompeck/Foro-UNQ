@@ -40,5 +40,4 @@ class Foro {
                 .flatMap{ publicaciones -> publicaciones }
     }
 
-
 }
