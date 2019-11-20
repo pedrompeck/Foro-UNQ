@@ -4,7 +4,9 @@ import { BrowserRouter } from 'react-router-dom';
 import Login from './login';
 import Home from './home';
 import Search from './search';
+
 import Materia from './materia';
+import Register from './register'
 
 class AppRouter extends React.Component {
     
@@ -15,9 +17,8 @@ class AppRouter extends React.Component {
                 <Route exact path="/search" component={Search} />
                 <Route exact path="/materias/:id" component={Materia} />
                 <Route exact path="/" component={Login} />      
-
-                
-          </BrowserRouter>
+                <Route exact path="/register" component={Register} />      
+         </BrowserRouter>
         )
     }
 

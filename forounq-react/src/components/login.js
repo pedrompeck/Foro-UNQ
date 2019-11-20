@@ -1,5 +1,6 @@
 import React from 'react';
 import { materias } from '../api/api';
+import {Link} from 'react-router-dom';
 
 class Login extends React.Component {
 
@@ -9,6 +10,7 @@ class Login extends React.Component {
            userName: '',
            password: '',
         }
+        this.goToHome = this.goToHome.bind(this)
     }
 
     componentDidMount() {
@@ -23,16 +25,40 @@ class Login extends React.Component {
             console.log(error);
         })
     }
-   
+ 
+    goToHome() {
+        this.props.history.push('/home')
+    }
+
     render() {
         return(
-            <div className="container">
-                        <h1> FORO - UNQ </h1>
-                            <div>
-                              <p>Login</p>
-                              <p>Olvide contraseña</p>
-                             </div>
+            <div className="container centerRow" style={{backgroundColor: '#a72f4e'}}>
+                <div className="row">
+                    <div className="col-4 offset-4">
+                        <div className="container text-center">
+                        <h1> FORO UNQ</h1>
+                            <div style={{margin:'1em'}}>
+                              <input
+                                type="text"
+                                value="Usuario"
+                              />
+                            </div>
+                            <div style={{margin:'1em'}}>  
+                              <input
+                                type="text"
+                                value="Password"
+                              />
+                            </div>
+                            <div style={{margin:'0.5em'}}>
+                              <button type="button" className="btn btn-primary btn-block text-center" onClick={this.goToHome}> Ingresar</button>
+                            </div>
+                            <div style={{margin:'0.5em'}}>
+                                <Link to="/register"><p>Olvidé contraseña</p></Link>
+                            </div>
+                        </div>
                     </div>
+                </div>
+            </div>
         );
     }
 }
