@@ -2,6 +2,7 @@ import React from 'react';
 import { materias } from '../api/api';
 import { Link } from 'react-router-dom';
 
+
 class Materias extends React.Component {
 
     constructor(props) {
@@ -27,12 +28,18 @@ class Materias extends React.Component {
     render() {
         return(
             <div className="container">
-                        <h1> Materias </h1>
-                            {this.state.materias.map(materia => 
-                             <p> Materia:  <Link to={`/materia`}> {materia.name}  </Link> </p>
-                            )}
-                        <h1> Mis Favoritos </h1>    
-                    </div>
+                <h1> Materias </h1>
+                    {this.state.materias.map(
+                        function(materia, i){
+                            <p> Materia:  <Link to={ `/materia/${materia.id}`}> {materia.name}  </Link> </p>
+                        }
+                        /*
+                        materia => 
+                        <p> Materia:  <Link to={ `/materia/${materia.id}`}> {materia.name}  </Link> </p>
+                        */
+                    )}
+                <h1> Mis Favoritos </h1>    
+            </div>
         );
     }
 }
