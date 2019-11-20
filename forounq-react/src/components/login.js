@@ -11,6 +11,8 @@ class Login extends React.Component {
            password: '',
         }
         this.goToHome = this.goToHome.bind(this)
+        this.setFieldUser = this.setFieldUser.bind(this)
+        this.setFieldPassword = this.setFieldPassword.bind(this)
     }
 
     componentDidMount() {
@@ -30,6 +32,14 @@ class Login extends React.Component {
         this.props.history.push('/home')
     }
 
+    setFieldUser (e) {
+        this.setState({[e.target.userName]: e.target.value})
+    }
+
+    setFieldPassword (e) {
+        this.setState({[e.target.password]: e.target.value})
+    }
+
     render() {
         return(
             <div className="container centerRow" style={{backgroundColor: '#a72f4e'}}>
@@ -40,13 +50,13 @@ class Login extends React.Component {
                             <div style={{margin:'1em'}}>
                               <input
                                 type="text"
-                                value="Usuario"
+                                onChange={(e)=>this.setFieldUser(e)}
                               />
                             </div>
                             <div style={{margin:'1em'}}>  
                               <input
                                 type="text"
-                                value="Password"
+                                onChange={(e)=>this.setFieldPassword(e)}
                               />
                             </div>
                             <div style={{margin:'0.5em'}}>
