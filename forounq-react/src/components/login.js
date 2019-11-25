@@ -1,5 +1,5 @@
 import React from 'react';
-import { materias } from '../api/api';
+import { materias, login } from '../api/api';
 import {Link} from 'react-router-dom';
 
 class Login extends React.Component {
@@ -7,8 +7,9 @@ class Login extends React.Component {
     constructor() {
         super();
         this.state = {
-           userName: '',
+           username: '',
            password: '',
+           error: '',
         }
         this.goToHome = this.goToHome.bind(this)
         this.setFieldUser = this.setFieldUser.bind(this)
@@ -29,15 +30,22 @@ class Login extends React.Component {
     }
  
     goToHome() {
-        this.props.history.push('/home')
+        const {username,password} = this.state
+        this.setState({error: ''})
+        if (username && password){
+            login({username,password})
+            .then(() => this.props.history.push('/home')) 
+            .catch(() => this.setState({error: "Usuario o Contraseña Incorrectos"}))
+        }
+        
     }
 
     setFieldUser (e) {
-        this.setState({[e.target.userName]: e.target.value})
+        this.setState({username: e.target.value})
     }
 
     setFieldPassword (e) {
-        this.setState({[e.target.password]: e.target.value})
+        this.setState({password: e.target.value})
     }
 
     render() {
@@ -52,14 +60,14 @@ class Login extends React.Component {
                                 <input
                                 placeholder="Usuario"
                                 type="text"
-                                onChange={(e)=>this.setFieldUser(e)}
+                                onChange={(e) => this.setFieldUser(e)}
                                 />
                                 </div>
                                 <div style={{margin:'1em'}}>  
                                 <input
                                 placeholder="Contraseña"
                                 type="password"
-                                onChange={(e)=>this.setFieldPassword(e)}
+                                onChange={(e) => this.setFieldPassword(e)}
                                 />
                                 </div>
                                 <div style={{margin:'0.5em'}}>

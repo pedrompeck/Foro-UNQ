@@ -52,6 +52,7 @@ class ForoController(unForo: Foro) {
         if (usuario.password != usuarioREST.password) {
             throw NotFoundResponse("Contraseña Incorrecta")
         }
+        
         ctx.status(OK_200)
         ctx.json(usuarioREST)
     }
