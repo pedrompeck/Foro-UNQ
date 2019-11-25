@@ -26,10 +26,4 @@ class ForoTest {
         foro.addUser(user)
         assertEquals(1,foro.users.size)
     }
-
-    @Test(expected = UserExistException::class)
-    fun testSeIntentaAgregarDosUsuariosConElMismoNombrePorLoTantoLanzaExcepcion() {
-        foro.addUser(User(1,"pity", "123"))
-        foro.addUser(User(1,"pity", "123"))
-    }
 }
