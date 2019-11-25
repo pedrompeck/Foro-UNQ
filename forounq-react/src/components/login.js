@@ -54,26 +54,26 @@ class Login extends React.Component {
                 <div className="container centerRow" style={{backgroundColor: '#a72f4e'}}>
                     <div className="row">
                         <div className="col-4 offset-4">
-                            <div className="container text-center">
+                            <div className="container text-center" style={{margin:'0.5em'}}>
                             <h1> FORO UNQ</h1>
-                                <div style={{margin:'1em'}}>
+                                <div style={{margin:'1.5em'}}>
                                 <input
                                 placeholder="Usuario"
                                 type="text"
                                 onChange={(e) => this.setFieldUser(e)}
                                 />
                                 </div>
-                                <div style={{margin:'1em'}}>  
+                                <div style={{margin:'1.5em'}}>  
                                 <input
                                 placeholder="Contraseña"
                                 type="password"
                                 onChange={(e) => this.setFieldPassword(e)}
                                 />
                                 </div>
-                                <div style={{margin:'0.5em'}}>
+                                <div style={{margin:'1em'}}>
                                 <button type="button" className="btn btn-primary btn-block text-center" onClick={this.goToHome}> Ingresar</button>
                                 </div>
-                                <div style={{margin:'0.5em'}}>
+                                <div style={{margin:'1em'}}>
                                     <Link to="/register"><p>Olvidé contraseña</p></Link>
                                 </div>
                             </div>
