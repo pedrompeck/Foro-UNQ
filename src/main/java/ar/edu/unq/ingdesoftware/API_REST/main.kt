@@ -34,6 +34,8 @@ fun main() {
     val hibernate = Publicacion( 5,"hibernate", "Hibernate es una herramienta de mapeo objeto-relacional para la plataforma Java que facilita el mapeo de atributos entre una base de datos relacional tradicional y el modelo de objetos de una aplicación")
     val scrum = Publicacion(6, "scrum","Scrum es un proceso en el que se aplican de manera regular un conjunto de buenas prácticas para trabajar colaborativamente, en equipo, y obtener el mejor resultado posible de un proyecto.")
 
+    val userAdmin = User(1, "Admin", "1234")
+
     react.addComentario(Comentario(7, "Recomiendo cursar esta materia, es muy interesante!"))
     hibernate.addComentario(Comentario(8, "Como se persiste en hibernate?"))
     scrum.addComentario(Comentario(9, "Asi se trabaja en la industria"))
@@ -45,6 +47,7 @@ fun main() {
     foro.addMateria(interfaces)
     foro.addMateria(persistencia)
     foro.addMateria(ingDeSoftware)
+    foro.addUser(userAdmin)
 
     val foroController = ForoController(foro)
 
@@ -58,6 +61,10 @@ fun main() {
 
         path("search") {
             get(foroController::getAllPublicacionesByName)
+        }
+
+        path("login") {
+            get(foroController::getUsuarioByName)
         }
     }
 }

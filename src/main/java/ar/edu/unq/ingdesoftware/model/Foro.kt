@@ -10,7 +10,6 @@ class Foro {
     var materias: MutableList<Materia> = mutableListOf()
 
     fun addUser(user: User) {
-        this.checkUser(user.username)
         this.users.add(user)
     }
 
@@ -18,11 +17,9 @@ class Foro {
         this.materias.add(materia)
     }
 
-    private fun checkUser(username: String) {
-        var user = this.users.find { user -> user.username == username }
-        if(user != null) {
-            throw UserExistException("El usuario con el nombre $username ya existe")
-        }
+    fun checkUser(username: String): User {
+        return this.users.find { user -> user.username == username } ?:
+                throw UserExistException("Usuario o Contraseña Incorrectos")
     }
 
     fun getMateriaById(idMateria: Int): Materia {

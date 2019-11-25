@@ -4,6 +4,7 @@ import ar.edu.unq.ingdesoftware.model.Foro
 import ar.edu.unq.ingdesoftware.model.Materia
 import ar.edu.unq.ingdesoftware.model.Publicacion
 import ar.edu.unq.ingdesoftware.model.exceptions.MateriaNotFound
+import ar.edu.unq.ingdesoftware.model.exceptions.UserExistException
 import io.javalin.Context
 import io.javalin.NotFoundResponse
 import org.eclipse.jetty.http.HttpStatus
@@ -38,4 +39,20 @@ class ForoController(unForo: Foro) {
         ctx.json(publicaciones)
     }
 
+    fun getUsuarioByName(ctx: Context) {
+        val usuarioREST = ctx.body<UsuarioREST>()
+
+        try {
+            foro.checkUser(usuarioREST.username)
+        } catch (e: UserExistException) {
+            throw NotFoundResponse("Nombre Incorrecto")
+        }
+
+        val usuario = foro.checkUser(usuarioREST.username)
+        if (usuario.password != usuarioREST.password) {
+            throw NotFoundResponse("Contraseña Incorrecta")
+        }
+        ctx.status(OK_200)
+        ctx.json(usuarioREST)
+    }
 }
