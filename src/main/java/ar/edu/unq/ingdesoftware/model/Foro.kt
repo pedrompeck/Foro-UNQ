@@ -1,6 +1,7 @@
 package ar.edu.unq.ingdesoftware.model
 
 import ar.edu.unq.ingdesoftware.model.exceptions.MateriaNotFound
+import ar.edu.unq.ingdesoftware.model.exceptions.PublicacionNotFound
 import ar.edu.unq.ingdesoftware.model.exceptions.UserExistException
 import java.util.stream.Collectors
 
@@ -40,4 +41,8 @@ class Foro {
                 .flatMap{ publicaciones -> publicaciones }
     }
 
+    fun getPublicacionByid(idPublicacion: Int) : Publicacion {
+        return this.getAllPublicaciones().find{ publicacion -> publicacion.id == idPublicacion } ?:
+                throw PublicacionNotFound("No se encontro la publicacion con el id $idPublicacion")
+    }
 }

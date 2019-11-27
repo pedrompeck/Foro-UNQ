@@ -30,7 +30,7 @@ fun main() {
     val persistencia = Materia(2, "Persistencia", " Es la acción de preservar la información de un objeto de forma permanente (guardado), pero a su vez también se refiere a poder recuperar la información del mismo (leerlo) para que pueda ser nuevamente utilizado.")
     val ingDeSoftware = Materia(3, "Ingeneria de software", "La ingeniería de software es la aplicación de un enfoque sistemático, disciplinado y cuantificable al desarrollo, operación y mantenimiento de software y el estudio de estos enfoques, es decir, el estudio de las aplicaciones de la ingeniería al software.")
 
-    val react = Publicacion(4,"react", "React es una biblioteca Javascript de código abierto diseñada para crear interfaces de usuario con el objetivo de facilitar el desarrollo de aplicaciones en una sola página. ")
+    val react = Publicacion(4,"react", "React es una biblioteca Javascript de código <abierto diseñada para crear interfaces de usuario con el objetivo de facilitar el desarrollo de aplicaciones en una sola página. ")
     val hibernate = Publicacion( 5,"hibernate", "Hibernate es una herramienta de mapeo objeto-relacional para la plataforma Java que facilita el mapeo de atributos entre una base de datos relacional tradicional y el modelo de objetos de una aplicación")
     val scrum = Publicacion(6, "scrum","Scrum es un proceso en el que se aplican de manera regular un conjunto de buenas prácticas para trabajar colaborativamente, en equipo, y obtener el mejor resultado posible de un proyecto.")
 
@@ -59,5 +59,17 @@ fun main() {
         path("search") {
             get(foroController::getAllPublicacionesByName)
         }
+
+        path("publicacion") {
+            path(":id") {
+                get(foroController::getPublicacionById)
+            }
+            path("comentar") {
+                path(":id") {
+                    post(foroController::comentarPublicacionById)
+                }
+            }
+        }
     }
+
 }
