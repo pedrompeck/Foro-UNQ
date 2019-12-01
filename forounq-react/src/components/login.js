@@ -76,6 +76,11 @@ class Login extends React.Component {
                                 <div style={{margin:'1em'}}>
                                     <Link to="/register"><p>Olvidé contraseña</p></Link>
                                 </div>
+                                <div class="alert alert-danger" role="alert" style={{borderColor:'#a72f4e', backgroundColor:'#a72f4e'}}>
+                                    {this.state.error &&
+                                        <h4 style={{color:'white'}}>Usuario o Password Incorrecto</h4>
+                                    }
+                                </div>
                             </div>
                         </div>
                     </div>
